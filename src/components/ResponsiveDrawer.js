@@ -11,7 +11,8 @@ import Divider from "@material-ui/core/Divider";
 import MenuIcon from "@material-ui/icons/Menu";
 import Ava from "./Avatar";
 import SimpleTable from "./Table";
-
+import FloatingButton from "./FloatingButton";
+import CreateSelects from "./CreateSelects";
 const drawerWidth = 240;
 
 const styles = theme => ({
@@ -117,6 +118,12 @@ class ResponsiveDrawer extends React.Component {
         </Hidden>
         <main className={classes.content}>
           <div className={classes.toolbar} />
+          <div>
+            <CreateSelects />
+          </div>
+          <div>
+            <FloatingButton />
+          </div>
           <SimpleTable />
         </main>
       </div>
