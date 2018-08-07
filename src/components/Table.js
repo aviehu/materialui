@@ -7,6 +7,7 @@ import TableCell from "@material-ui/core/TableCell";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
+import Icon from "@material-ui/core/Icon";
 
 const styles = theme => ({
   root: {
@@ -20,9 +21,9 @@ const styles = theme => ({
 });
 
 let id = 0;
-function createData(name, calories, fat, carbs, protein) {
+function createData(name, type, lastname, catagory, createdAt) {
   id += 1;
-  return { id, name, calories, fat, carbs, protein };
+  return { id, name, type, lastname, catagory, createdAt };
 }
 
 const data = [
@@ -42,7 +43,7 @@ function SimpleTable(props) {
             <TableCell>#</TableCell>
             <TableCell numeric>Type</TableCell>
             <TableCell numeric>Last Name</TableCell>
-            <TableCell numeric>Catagory</TableCell>
+            <TableCell numeric>catagory</TableCell>
             <TableCell numeric>Created At</TableCell>
           </TableRow>
         </TableHead>
@@ -53,10 +54,16 @@ function SimpleTable(props) {
                 <TableCell component="th" scope="row">
                   {n.name}
                 </TableCell>
-                <TableCell numeric>{n.calories}</TableCell>
-                <TableCell numeric>{n.fat}</TableCell>
-                <TableCell numeric>{n.carbs}</TableCell>
-                <TableCell numeric>{n.protein}</TableCell>
+                <TableCell numeric>{n.type}</TableCell>
+                <TableCell numeric>{n.lastname}</TableCell>
+                <TableCell numeric>{n.catagory}</TableCell>
+                <TableCell numeric>{n.createdAt}</TableCell>
+                <TableCell>
+                  <Icon>file_download</Icon>
+                  <Icon>info</Icon>
+                  <Icon>play_arrow</Icon>
+                  <Icon>delete</Icon>
+                </TableCell>
               </TableRow>
             );
           })}
